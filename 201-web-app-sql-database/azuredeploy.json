@@ -235,7 +235,7 @@
             "windowSize":"PT5M",
             "evaluationFrequency":"PT5M",
             "scopes":[ 
-               "[resourceId('Microsoft.Web/sites', variables('webSiteName'))]"
+               "[resourceGroup().id, variables('webSiteName'))]"
             ],
             "criteria":{ 
                "allOf":[ 
