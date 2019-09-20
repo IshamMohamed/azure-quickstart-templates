@@ -223,6 +223,7 @@
       { 
          "name":"[concat(resourceGroup().id,'Server Errors')]",
          "type":"Microsoft.Insights/metricAlerts",
+         "apiVersion": "2018-03-01",
          "location":"global",
          "tags":{ 
 
