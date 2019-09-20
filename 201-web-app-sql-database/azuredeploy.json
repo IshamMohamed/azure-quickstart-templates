@@ -235,7 +235,7 @@
             "windowSize":"PT5M",
             "evaluationFrequency":"PT5M",
             "scopes":[ 
-               "[resourceGroup().id, variables('webSiteName'))]"
+               "[concat(resourceGroup().id, variables('webSiteName'))]"
             ],
             "criteria":{ 
                "allOf":[ 
