@@ -221,6 +221,8 @@
          }
       },
       { 
+         "name":"[concat(resourceGroup().id,'Server Errors')]",
+         "type":"Microsoft.Insights/metricAlerts",
          "location":"global",
          "tags":{ 
 
@@ -254,7 +256,7 @@
             },
             "actions":[ 
                { 
-                  "actionGroupId":"[concat(resourceGroup().id, '/providers/microsoft.insights/actiongroups/application%20insights%20smart%20detection']",
+                  "actionGroupId":"[concat(resourceGroup().id, '/providers/microsoft.insights/actiongroups/application%20insights%20smart%20detection')]",
                   "webhookProperties":{ 
 
                   }
