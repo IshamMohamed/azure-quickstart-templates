@@ -226,7 +226,7 @@
          "type":"Microsoft.Insights/metricAlerts",
          "location":"global",
          "dependsOn":[
-            "[resourceId('Microsoft.Web/sites', variables('webSiteName'))]"
+            "[variables('webSiteName')]"
          ],
          "tags":{ 
 
