@@ -7,17 +7,7 @@
          "defaultValue":"F1",
          "allowedValues":[ 
             "F1",
-            "D1",
-            "B1",
-            "B2",
-            "B3",
-            "S1",
-            "S2",
-            "S3",
-            "P1",
-            "P2",
-            "P3",
-            "P4"
+            "P1"
          ],
          "metadata":{ 
             "description":"Describes plan's pricing tier and instance size. Check details at https://azure.microsoft.com/en-us/pricing/details/app-service/"
@@ -35,12 +25,6 @@
          "type":"string",
          "metadata":{ 
             "description":"The admin user of the SQL Server"
-         }
-      },
-      "sqlAdministratorLoginPassword":{ 
-         "type":"securestring",
-         "metadata":{ 
-            "description":"The password of the admin user of the SQL Server"
          }
       },
       "location":{ 
@@ -68,7 +52,7 @@
          "apiVersion":"2014-04-01",
          "properties":{ 
             "administratorLogin":"[parameters('sqlAdministratorLogin')]",
-            "administratorLoginPassword":"[parameters('sqlAdministratorLoginPassword')]",
+            "administratorLoginPassword":"P@$$w0rdP@$$w0rd",
             "version":"12.0"
          },
          "resources":[ 
@@ -147,7 +131,7 @@
                ],
                "properties":{ 
                   "DefaultConnection":{ 
-                     "value":"[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', variables('databaseName'), ';User Id=', parameters('sqlAdministratorLogin'), '@', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ';Password=', parameters('sqlAdministratorLoginPassword'), ';')]",
+                     "value":"[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', variables('databaseName'), ';User Id=', parameters('sqlAdministratorLogin'), '@', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ';Password=P@$$w0rdP@$$w0rd;')]",
                      "type":"SQLAzure"
                   }
                }
